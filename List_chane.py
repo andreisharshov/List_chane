@@ -50,7 +50,10 @@ class LinkedList2:
         else:
             while node is not None:
                 if node.value == val:
-                    node.prev.next = node.next
+                    p = node.prev
+                    p.next = node.next
+                    n = node.next
+                    n.prev = p
                     break                                     
                 node = node.next
     
